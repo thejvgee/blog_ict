@@ -19,7 +19,7 @@ export default function Blog() {
   const searchRef = useRef('')
 
   const { blogs } = useSelector((state) => state.blogReducer);
-
+  // search function
   const onSearchSubmit = (e) => {
     e.preventDefault();
     const searchData = searchRef.current.value.trim().toLowerCase();
@@ -35,7 +35,9 @@ export default function Blog() {
       return false;
     }
   };
-
+//api gaas blog data tatna
+//hariug n reverse hiiged hamgiin suuld nemegdsen blog deeree awch uldeh
+//redux store-ruu dispatch hiine
   const fetcher =async (url) => {
 
   try {
@@ -43,7 +45,7 @@ export default function Blog() {
     if (response?.data?.success) {
       const data = response.data.allBlogs;
       const reversedBlog = data.slice().reverse();
-      dispatchR(addBlogs(reversedBlog));
+      dispatchR(addBlogs(reversedBlog));// redux store-d hadgalnaa store.js bga
     }
     return response.data;
   } catch (error) {
@@ -51,6 +53,8 @@ export default function Blog() {
     throw new Error('Failed to fetch data');
   }
 };
+//revalidateOnMount → component ачаалах бүрт fetch хийнэ.
+//revalidateOnReconnect → интернэт салгаад буцааж холбоход дахин fetch хийнэ.
 const { data, error, mutate } = useSWR(
   `/blog/get_blog`,
   fetcher,
