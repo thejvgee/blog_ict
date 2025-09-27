@@ -1,5 +1,7 @@
 import mongoose from "mongoose";
 
+//mongoose ashiglan database holbono
+//blog gsn collection dotorh data yg ymar2 helbereer baihig n zaaj ogno interface tei adil java gaar bol
 const BlogSchema = new mongoose.Schema({
   title : {
     type : String,
