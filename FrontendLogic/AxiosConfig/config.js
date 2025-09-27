@@ -3,7 +3,7 @@ import Cookies from "js-cookie";
 
 const Email = Cookies.get('MyEmail')
 
-const BASEURL = 'https://blogjvgee.netlify.app/api'
+const BASEURL = 'http://localhost:3000/api'
 
 // axios ashiglaad api ruu request yvuulahad baseURL, header ntrig ni awch uldeh heseg
 export const api = axios.create({
