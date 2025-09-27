@@ -1,7 +1,7 @@
 import NextAuth from "next-auth/next";
 import GoogleProvider from "next-auth/providers/google"
 import GitHubProvider from "next-auth/providers/github"
-
+//google,github aar damjulj newtrene
 const handler = NextAuth({
   providers : [
     GitHubProvider({
